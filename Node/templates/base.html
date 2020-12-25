@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <div><a href="/index">Home</a></div>
+    <center><h1>{{ title }}</h1></center>
+    <hr>
+
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>{{ message|safe }} </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    
+    {% block content %}{% endblock %}
+    <style>
+      h1{
+        padding: 25px;
+        text-align: center;
+        background: #55acfd;
+        color: rgb(0, 0, 0);
+        font-size: 40px;
+        border-radius: 40px;
+      }
+      body{
+        background: #eb7272;
+      }
+    </style>
+  </body>
+</html>
